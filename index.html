@@ -17,15 +17,21 @@
 }
 body {
   overflow: hidden; /* Hide scrollbars */
-}
-p {
-    text-align: center;
-	width:100%; height:100%; object-fit: cover; 
-	inline: block;
+background-color:#000;
 }
 img {
 	width:100%; height:100%; object-fit: cover; 
 	inline: block;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+	}
+#_d {
+color: #fff;
+    line-height: 800px;
+    text-align: center;
 	}
 </style>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -33,20 +39,10 @@ img {
 	
 	
 $(document).ready(function() {
-	let params = new URLSearchParams(window.location.search);
-	var a = params.get('_d'); // 'node'
-	var $p = $('#_d');
-	if(a){
-	    $p.html(a);
-	}
-	
     var _intervalId;
     
     function fadeInLastImg()
     {
-	if($p){
-	$p.remove();
-	}
 	    
         var backImg = $('.column img:first');
         backImg.hide();
@@ -54,10 +50,22 @@ $(document).ready(function() {
         $('.column' ).append( backImg );
         backImg.fadeIn()
     };
+
+
+	let params = new URLSearchParams(window.location.search);
+	var a = params.get('_d'); // 'node'
+	var $p = $('#_d');
+
+	    $p.html(a ?? "no serial number...");
+		setTimeout(	function(){
+		$p.remove();
+			_intervalId = setInterval( function() {
+				fadeInLastImg();
+			}, 5000 );
+		},
+		4000);
+	
         
-    _intervalId = setInterval( function() {
-        fadeInLastImg();
-    }, 3000 );
 
 });
 </script>
@@ -65,7 +73,8 @@ $(document).ready(function() {
 <body>
 <div class="row">
   <div class="column">
-    <p id="_d"></p>
+    <div id="_d"></div>
+
     <img src="beer-_18394_hd_072125d585203b76a63ba0d0c25703.jpeg" name="ThreeBoysWheat">
     <img src="beer-503566_ca20b_hd.jpeg" name="LibertyHaloPils">
     <img src="beer-2864298_2fc87_hd.jpeg" name="deepcreekmiyagi">
@@ -84,7 +93,6 @@ $(document).ready(function() {
     <img src="beer-5320718_83ccb_hd.jpeg" name="BaylandsFreshHopsAwaken">
     <img src="greymatter_an_abstract_uplinting_grungy_mural_for_medicalert_de_d532087e-e562-4b79-a143-8adb3bb59d63.png" name="abstractdemo">
     <img src="beer-5343093_00e6e_hd.jpeg" name="sunshineCycloneGabi">
-
   </div>
 </div>
 

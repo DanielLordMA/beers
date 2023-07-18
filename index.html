@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+body {
+  overflow: hidden; /* Hide scrollbars */
+}
+img {
+	width:100%; height:100%; object-fit: cover; 
+	inline: block;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    var _intervalId;
+    
+    function fadeInLastImg()
+    {
+        var backImg = $('.column img:first');
+        backImg.hide();
+        backImg.remove();
+        $('.column' ).append( backImg );
+        backImg.fadeIn()
+    };
+        
+    _intervalId = setInterval( function() {
+        fadeInLastImg();
+    }, 1000 );
+
+});
+</script>
+</head>
+<body>
+<div class="row">
+  <div class="column">
+    <img src="beer-5356352_3af56_hd.jpeg" >
+    <img src="beer-703705_57ed3_hd.jpeg" >
+    <img src="beer-2098885_cb721_hd.jpeg" >
+    <img src="beer-2200675_fdd89_hd.jpeg" >
+    <img src="beer-3945168_1c923_hd.jpeg" >
+    <img src="beer-5255713_8c5fe_hd.png" >
+    <img src="beer-5320718_83ccb_hd.jpeg" >
+    <img src="greymatter_an_abstract_uplinting_grungy_mural_for_medicalert_de_d532087e-e562-4b79-a143-8adb3bb59d63.png" >
+    <img src="beer-5343093_00e6e_hd.jpeg" >
+  </div>
+</div>
+
+</body>
+</html>
+

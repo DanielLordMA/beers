@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+body {
+  overflow: hidden; /* Hide scrollbars */
+}
+img {
+	width:100%; height:100%; object-fit: cover; object-position: 50% 50%;
+	inline: block;
+	}
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="column">
+    <img src="beer-5092457_89974_hd.jpeg" >
+  </div>
+  <div class="column">
+    <img src="beer-703705_57ed3_hd.jpeg" >
+  </div>
+</div>
+
+</body>
+</html>
+

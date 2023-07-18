@@ -33,11 +33,12 @@ img {
 $(document).ready(function() {
 	let params = new URLSearchParams(window.location.search);
 	var a = params.get('_d'); // 'node'
-
+	var $p = $('#_d');
 	if(a){
-		$('#_d').html(a).remove(5000);
+	    $p.html(a);
+	 	setTimeout('', 5000);
 	}
-
+	$p.remove();
 	
     var _intervalId;
     

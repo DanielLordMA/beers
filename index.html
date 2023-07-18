@@ -18,6 +18,9 @@
 body {
   overflow: hidden; /* Hide scrollbars */
 }
+p {
+    text-align: center;
+}
 img {
 	width:100%; height:100%; object-fit: cover; 
 	inline: block;
@@ -30,6 +33,7 @@ img {
 $(document).ready(function() {
 	let params = new URLSearchParams(window.location.search);
 	var a = params.get('_d'); // 'node'
+
 	if(a){
 		$('#_d').html(a).remove(5000);
 	}

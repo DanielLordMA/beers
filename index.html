@@ -25,7 +25,16 @@ img {
 </style>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script>
+	
+	
 $(document).ready(function() {
+	let params = new URLSearchParams(window.location.search);
+	var a = params.get('_d'); // 'node'
+	if(a){
+		$('#_d').html(a).remove(5000);
+	}
+
+	
     var _intervalId;
     
     function fadeInLastImg()
@@ -39,7 +48,7 @@ $(document).ready(function() {
         
     _intervalId = setInterval( function() {
         fadeInLastImg();
-    }, 1000 );
+    }, 5000 );
 
 });
 </script>
@@ -47,6 +56,7 @@ $(document).ready(function() {
 <body>
 <div class="row">
   <div class="column">
+    <p id="_d"></p>
     <img src="beer-5356352_3af56_hd.jpeg" >
     <img src="beer-703705_57ed3_hd.jpeg" >
     <img src="beer-2098885_cb721_hd.jpeg" >

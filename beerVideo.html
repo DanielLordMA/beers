@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* Clear floats after image containers */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        body {
+            overflow: hidden; /* Hide scrollbars */
+			background-color: gray;
+        }
+
+        img {
+            width: 800px;
+            height: 800px;
+            object-fit: cover;
+            inline: block;
+            display: flex;
+            justify-content: center;
+        }
+        video {
+            width: 800px;
+            height: 800px;
+            object-fit: cover;
+            inline: block;
+            display: flex;
+            justify-content: center;
+        }
+        .circle {
+            width: 800px;
+            height: 800px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        img.smallimg {
+            width: 600px;
+            height: 600px;
+            display: block;
+            margin-top : 0px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .info {
+            color: #fff;
+            line-height: 35px;
+            text-align: center;
+            width: 800px;
+            background-color: #000;
+            font-family: Arial;
+        }
+        table {
+            margin: 0 auto;
+        }
+        .tdleft {
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column circle">
+            <video muted autoplay loop playsinline class="" src="https://production-sketch-video.metademolab.com/4aa61571118f474f951a6d4577960b92/walk_punch_kick_jump_walk.mp4" ></video>
+        </div>
+        <div class="column circle">
+            <div class="info ">
+                <img class="smallimg" src="beer-957932_5a7cc_hd_exp.png">
+                <table>
+                    <tr>
+                        <td class="tdleft">Brewery</td>
+                        <td>Brave Brewing Co</td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">Beer Name</td>
+                        <td>Hazy Tiger</td>
+                    </tr>
+                    <tr>
+                        <td class="tdleft">Style</td>
+                        <td>IPA - New England / Hazy</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">6.3% ABV | N/A IBU</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Pint   12.00 NZD</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
